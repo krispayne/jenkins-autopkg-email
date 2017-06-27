@@ -1,5 +1,5 @@
 # jenkins-autopkg-email
-customization scripts for Jenkins that sends e-mail notifications when AutoPkg imports a new package or is failing
+customization scripts for Jenkins that sends e-mail notifications when AutoPkg imports a new package to the JSS or is failing
 
 # Requires:
     Extended E-mail Notification (Email-ext) plugin -- https://wiki.jenkins-ci.org/display/JENKINS/Email-ext+plugin
