@@ -8,7 +8,7 @@ Build duration: ${build.durationString}
 <%
 import java.util.regex.*
 def log = build.getLog(1000)
-def NewItemsImportedSearch = log =~ /new items were imported/
+def NewItemsImportedSearch = log =~ /changes were made to the JSS/
 def NewItemsDownloaded = log =~ /new items were downloaded/
 def NothingDone = log =~ /Nothing downloaded, packaged or imported/
 
@@ -26,15 +26,15 @@ Nothing downloaded, packaged or imported... SO WHY ARE WE SEEING THIS E-MAIL?!?@
 } else if (NewItemsImportedSearch) {
 %>
 
-NEW ITEM AVAILABLE IN MUNKI
-A new version of ${project.name} was downloaded (autopkg: /Users/Shared/AutoPkg/Cache/${project.name} and imported into the munki repository (/Users/Shar                  ed/munki_repo/pkgs/).
+NEW ITEM AVAILABLE IN JSS
+A new version of ${project.name} was downloaded (autopkg: /Users/Shared/AutoPkg/Cache/${project.name}) and imported into the JSS.
 
 <%
 } else if (NewItemsDownloaded) {
 %>
 
 NEW ITEM DOWNLOADED TO AutoPkg Cache
-A new version of ${project.name} was downloaded to the AutoPkg Cache -- (autopkg: /Users/Shared/AutoPkg/Cache/${project.name} BUT NOT imported into the m                  unki repository.
+A new version of ${project.name} was downloaded to the AutoPkg Cache -- (autopkg: /Users/Shared/AutoPkg/Cache/${project.name}) BUT NOT imported into the JSS.
 
 <%
 } else {
